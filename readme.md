@@ -1,8 +1,15 @@
 # dockerized insecure single node cockroach for local development
 
+## Features
+* single node cluster
+* in insecure or secure mode with automatic certs creation
+* optional database creation creation on start
+* optional user with password creation on start
+* database initialization scripts in /docker-entrypoint-initdb.d/
+
 ## Initialization script
 
-Add scripts under /docker-entrypoint-initdb./; .sh and .sql are supported.
+Add scripts under /docker-entrypoint-initdb.d/; .sh and .sql are supported.
 
 ## Usage
 
