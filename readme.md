@@ -63,6 +63,7 @@ networks:
 | COCKROACH_EXTRA_START_OPTS |              | N | none | Opts to be added to start command | 
 
 ## License
+Copyright (c) 2021 by [Cornelius Buschka](https://github.com/cbuschka).
 
 [MIT-0](./license.txt)
 
