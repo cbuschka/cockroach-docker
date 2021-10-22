@@ -3,9 +3,9 @@
 ## Features
 * single node cluster
 * in insecure or secure mode with automatic certs creation
-* optional database creation creation on start
+* optional database creation on start
 * optional user with password creation on start
-* database initialization scripts in /docker-entrypoint-initdb.d/
+* database initialization scripts under /docker-entrypoint-initdb.d/, .sh and .sql
 
 ## Initialization script
 
