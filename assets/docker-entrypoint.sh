@@ -102,7 +102,7 @@ if [ $# -eq 0 ]; then
       touch ${STAT_FILE}
     elif [[ ! -f ${STAT_FILE} ]] && [[ "${SCRIPT}" =~ .+\.sql ]]; then
       echo -e "\nRunning ${SCRIPT}..."
-      /cockroach/cockroach sql --echo-sql ${COCKROACH_SECURITY_OPTS} --user root <${SCRIPT}
+      /cockroach/cockroach sql --echo-sql ${COCKROACH_SECURITY_OPTS} --database ${COCKROACH_DATABASE:-defaultdb} --user ${COCKROACH_USER:-root} <${SCRIPT}
       touch ${STAT_FILE}
     else
       echo -e "\nSkipping ${SCRIPT}."
