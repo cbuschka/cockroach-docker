@@ -50,9 +50,9 @@ networks:
 
 ## Supported Environment Variables
 
-| Variable                 | Example Value  | Required | Default Value  | Description |
+| Variable                 | Value  | Required | Default Value  | Description |
 |--------------------------|----------------|----------|----------------------------|----------|
-| COCKROACH_SECURITY_MODE  | secure         | Y | insecure or secure | Chooses security mode of cockroach db
+| COCKROACH_SECURITY_MODE  | secure or insecure | Y | insecure | Chooses security mode of cockroach db
 | COCKROACH_HTTP_ADDR      | host:port      | N | 0.0.0.0:26257 | Listen address for http console |
 | COCKROACH_ADVERTISE_ADDR | host:port      | N | 0.0.0.0:26257 |  Address other nodes shall connect to |
 | COCKROACH_LISTEN_ADDR    | host:port      | N | 0.0.0.0:26257 | Address cockroach process within docker container shall be listen on |
