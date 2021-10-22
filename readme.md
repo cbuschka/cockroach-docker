@@ -1,4 +1,4 @@
-# dockerized insecure single node cockroach for local development
+# dockerized single node cockroach for local development
 
 ## Features
 * single node cluster
