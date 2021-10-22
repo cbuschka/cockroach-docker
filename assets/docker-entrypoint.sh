@@ -53,16 +53,15 @@ fi
 
 if [ $# -eq 0 ]; then
   /cockroach/cockroach start-single-node \
-    --store=path=/cockroach/cockroach-data \
     ${COCKROACH_SECURITY_OPTS} ${COCKROACH_SECURITY_START_OPTS} \
     --pid-file=/run/cockroach.pid \
+    --store=path=${COCKROACH_DATA_DIR} \
     --background ${COCKROACH_EXTRA_START_OPTS}
   COCKROACH_PID=$(cat /run/cockroach.pid)
   echo "PID is ${COCKROACH_PID}."
 
   echo "Waiting for cockroach to come up..."
   while ! /cockroach/cockroach sql ${COCKROACH_SECURITY_OPTS} --database defaultdb --user root -e "select 1" 1>/dev/null 2>&1; do
-    echo "Sleeping..."
     sleep 1
   done
   echo "Good, cockroach is reachable."

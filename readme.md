@@ -12,13 +12,14 @@ Add scripts under /docker-entrypoint-initdb./; .sh and .sql are supported.
 version: "3"
 services:
   roach1:
-    image: docker.io/cbuschka/cockroach-dev:v21.1.11-2
+    image: docker.io/cbuschka/cockroach-dev:v21.1.11-3
     hostname: roach1
     environment:
       - COCKROACH_HTTP_ADDR=0.0.0.0:8443
       - COCKROACH_ADVERTISE_ADDR=localhost:26257
       - COCKROACH_LISTEN_ADDR=0.0.0.0:26257
       - COCKROACH_CERTS_DIR=/cockroach/cockroach-certs
+      - COCKROACH_DATA_DIR=/cockroach/cockroach-data
       - COCKROACH_SECURITY_MODE=secure
       - COCKROACH_ROOT_PASSWORD=asdfasdf
       - COCKROACH_DATABASE=develop
@@ -56,6 +57,7 @@ networks:
 | COCKROACH_ADVERTISE_ADDR | host:port      | N | 0.0.0.0:26257 |  Address other nodes shall connect to |
 | COCKROACH_LISTEN_ADDR    | host:port      | N | 0.0.0.0:26257 | Address cockroach process within docker container shall be listen on |
 | COCKROACH_CERTS_DIR      | /certs         | N | /cockroach/cockroach-certs | Directory for certificates |
+| COCKROACH_DATA_DIR       | /data          | N | /cockroach/cockroach-data | Directory for data |
 | COCKROACH_ROOT_PASSWORD  | secret         | N | none | Password for root, optional, default none |
 | COCKROACH_DATABASE       | exampledb      | N | none | Name of database to be created |
 | COCKROACH_USER           | exampleuser    | N | none | Name of user to be created |
