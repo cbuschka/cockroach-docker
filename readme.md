@@ -20,8 +20,8 @@ services:
       - COCKROACH_LISTEN_ADDR=0.0.0.0:26257
       - COCKROACH_CERTS_DIR=/cockroach/cockroach-certs
       - COCKROACH_SECURITY_MODE=secure
-	  - COCKROACH_ROOT_PASSWORD=asdfasdf
-	  - COCKROACH_DATABASE=develop
+      - COCKROACH_ROOT_PASSWORD=asdfasdf
+      - COCKROACH_DATABASE=develop
       - COCKROACH_USER=developer
       - COCKROACH_PASSWORD=asdfasdf
     ports:
@@ -45,6 +45,7 @@ volumes:
 networks:
   roachnet:
 ```
+[docker-compose.yml](./docker-compose.yml)
 
 ## Supported Environment Variables
 
