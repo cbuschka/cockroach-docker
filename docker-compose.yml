@@ -1,7 +1,7 @@
 version: "3"
 services:
   roach1:
-    image: docker.io/cbuschka/cockroach-dev:v21.1.11-2
+    image: docker.io/cbuschka/cockroach-dev:v21.1.11-4
     hostname: roach1
     environment:
       - COCKROACH_HTTP_ADDR=0.0.0.0:8443
