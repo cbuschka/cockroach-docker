@@ -57,19 +57,19 @@ networks:
 
 ## Supported Environment Variables
 
-| Variable                 | Value  | Required | Default Value  | Description |
-|--------------------------|----------------|----------|----------------------------|----------|
-| COCKROACH_SECURITY_MODE  | secure or insecure | Y | insecure | Chooses security mode of cockroach db
-| COCKROACH_HTTP_ADDR      | host:port      | N | 0.0.0.0:26257 | Listen address for http console |
-| COCKROACH_ADVERTISE_ADDR | host:port      | N | 0.0.0.0:26257 |  Address other nodes shall connect to |
-| COCKROACH_LISTEN_ADDR    | host:port      | N | 0.0.0.0:26257 | Address cockroach process within docker container shall be listen on |
-| COCKROACH_CERTS_DIR      | /certs         | N | /cockroach/cockroach-certs | Directory for certificates |
-| COCKROACH_DATA_DIR       | /data          | N | /cockroach/cockroach-data | Directory for data |
-| COCKROACH_ROOT_PASSWORD  | secret         | N | none | Password for root, optional, default none |
-| COCKROACH_DATABASE       | exampledb      | N | none | Name of database to be created |
-| COCKROACH_USER           | exampleuser    | N | none | Name of user to be created |
-| COCKROACH_PASSWORD       | secret         | N | none | Password to set for created user |
-| COCKROACH_EXTRA_START_OPTS |              | N | none | Opts to be added to start command | 
+| Variable                 | Value  | Required | Description |
+|--------------------------|----------------|----------|----------|
+| COCKROACH_SECURITY_MODE  | secure or insecure | Y | Chooses security mode of cockroach db, default: insecure |
+| COCKROACH_HTTP_ADDR      | host:port      | N | Listen address for http console, default: 0.0.0.0:26257  |
+| COCKROACH_ADVERTISE_ADDR | host:port      | N | Address other nodes shall connect to, default: hostname:26257 |
+| COCKROACH_LISTEN_ADDR    | host:port      | N | Address cockroach process within docker container shall be listen on, default: 0.0.0.0:26257 |
+| COCKROACH_CERTS_DIR      | /certs         | N | Directory for certificates, default: /cockroach/cockroach-certs |
+| COCKROACH_DATA_DIR       | /data          | N | Directory for data, default: /cockroach/cockroach-data |
+| COCKROACH_ROOT_PASSWORD  | secret         | N | Password for root, optional, default: none |
+| COCKROACH_DATABASE       | exampledb      | N | Name of database to be created, default: none |
+| COCKROACH_USER           | exampleuser    | N | Name of user to be created, default: none |
+| COCKROACH_PASSWORD       | secret         | N | Password to set for created user, default: none |
+| COCKROACH_EXTRA_START_OPTS |              | N | Opts to be added to start command, default: none | 
 
 ## License
 Copyright (c) 2021 by [Cornelius Buschka](https://github.com/cbuschka).
