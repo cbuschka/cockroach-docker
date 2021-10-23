@@ -3,10 +3,10 @@ VERSION := latest
 
 build:
 	cd ${TOP_DIR} && \
-	docker build --tag cockroach-dev:local .
+	docker build --tag cockroach-docker:local .
 
 run-insecure:	build
-	docker run -ti --rm --name=cockroach -e COCKROACH_SECURITY_MODE=insecure --ulimit nofile=262144:262144 cockroach-dev:local
+	docker run -ti --rm --name=cockroach -e COCKROACH_SECURITY_MODE=insecure --ulimit nofile=262144:262144 cockroach-docker:local
 
 run-secure:	build
 	docker run -ti --rm --name=cockroach \
@@ -19,8 +19,8 @@ run-secure:	build
 		-p 8443:8443 \
 		--ulimit nofile=20000:40000 \
 		--ulimit nproc=65535 \
-		cockroach-dev:local
+		cockroach-docker:local
 
 push:
-	docker tag cockroach-dev:local cbuschka/cockroach-dev:${VERSION}
-	docker push cbuschka/cockroach-dev:${VERSION}
+	docker tag cockroach-docker:local cbuschka/cockroach:${VERSION}
+	docker push cbuschka/cockroach:${VERSION}
