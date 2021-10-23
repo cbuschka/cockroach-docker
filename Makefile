@@ -21,6 +21,6 @@ run-secure:	build
 		--ulimit nproc=65535 \
 		cockroach-docker:local
 
-push:
+push:	build
 	docker tag cockroach-docker:local cbuschka/cockroach:${VERSION}
 	docker push cbuschka/cockroach:${VERSION}
