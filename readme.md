@@ -19,7 +19,7 @@ Add scripts under /docker-entrypoint-initdb.d/; .sh and .sql are supported.
 version: "3"
 services:
   roach1:
-    image: docker.io/cbuschka/cockroach:v21.1.11-4
+    image: docker.io/cbuschka/cockroach:v21.1.11-5
     hostname: roach1
     environment:
       - COCKROACH_HTTP_ADDR=0.0.0.0:8443
