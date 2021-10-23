@@ -23,4 +23,6 @@ run-secure:	build
 
 push:	build
 	docker tag cockroach-docker:local cbuschka/cockroach:${VERSION}
+	docker tag cockroach-docker:local cbuschka/cockroach:latest
 	docker push cbuschka/cockroach:${VERSION}
+	docker push cbuschka/cockroach:latest
